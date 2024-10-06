@@ -31,7 +31,7 @@ function Login() {
     console.log('useEffect');
     if (apiResponse && apiResponse.errorCode === 'SU001') {
       localStorage.setItem('accessToken', apiResponse.data.accessToken);
-      navigate('/home');
+      navigate('/');
     }
   }, [apiResponse]);
 

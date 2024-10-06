@@ -13,6 +13,8 @@ import { theme } from './Theme';
 import Home from './pages/Home';
 import ForgotPassword from './pages/Auth/forgotpassword';
 import SetNewPassword from './pages/Auth/setnewpassword';
+import Account from './pages/Account';
+import AddNewBot from './pages/AddNewBot';
 
 const ProtectedRoute = ({ children }) => {
   const [searchParams] = useSearchParams();
@@ -49,10 +51,26 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: '/home',
+    path: '/',
     element: (
       <ProtectedRoute>
         <Home />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/account',
+    element: (
+      <ProtectedRoute>
+        <Account />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/addNewBot',
+    element: (
+      <ProtectedRoute>
+        <AddNewBot />
       </ProtectedRoute>
     ),
   },
